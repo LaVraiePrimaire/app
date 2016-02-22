@@ -9,11 +9,8 @@
       span.name.ellipsis(style=color ? 'color: #{color}' : '')=user.firstName
       span.caret
     ul.dropdown-list
-      - if (config.multiForum)
-        li: a(href='/settings/forums')= t('header.forums')
-      - else
-        - if (user.staff)
-          li: a(href='/admin')= t('header.admin')
+      - if (user.staff)
+        li: a(href='/admin')= t('header.admin')
       li.visible-xs
         a(href='/notifications')=t('notifications.title')
       li: a(href='/settings')= t('header.settings')
