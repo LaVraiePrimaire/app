@@ -110,14 +110,6 @@ When `hidden` is selected, only registered users will be able to view the topics
 
 If this option is set to `true`, only users listed on `/admin/users` will be able to signin/signup. This doesn't affect `staff` users.
 
-#### **multiForum**
-* env: `MULTI_FORUM`
-* default: `false`
-
-If this option is set to `true`, the application will be in a "hub" state and any user will be able to create it's own forum.
-
-_**DISCLAIMER:** This option is in ALPHA state, expect a lot a changes not far away._
-
 #### **client**
 * env: `CLIENT`
 * default: `[ ... ]`
@@ -395,12 +387,6 @@ When `true` will enable a route under `/rss` that can be used as a RSS Feed (XML
 * default: 0
 
 Number specifying how many comments will be listed before a "Show more" button is shown. 0 will get all comments from the backend.
-
-#### **feedsLimit**
-* env: `FEEDS_LIMIT`
-* default: 10
-
-Number of feed cards shown on the homepage when `multiForum` is set to true
 
 #### **tweetText**
 * env: `TWEET_TEXT`
