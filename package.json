@@ -21,6 +21,7 @@
     "url": "git://github.com/LaVraiePrimaire/democracyos.git"
   },
   "dependencies": {
+    "agenda": "^0.8.0",
     "assert": "1.3.0",
     "async": "^1.3.0",
     "babelify": "^6.0.2",
