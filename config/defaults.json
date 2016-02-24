@@ -37,11 +37,7 @@
     "mailer": {
       "name": "La Vraie Primaire",
       "email": "no-reply@lavraieprimaire.fr",
-      "service": "",
-      "auth": {
-        "user": "",
-        "pass": ""
-      }
+	  "apiKey": "tyEIUHz8RdZvV5Jw"
     }
   },
   "client": [
@@ -79,13 +75,13 @@
   "socialshare": {
     "siteName": "La Vraie Primaire",
     "siteDescription": "Envie de voter differement ? Envie d'innover ? Devenez acteur du changement.",
-    "image": "https://2.gravatar.com/avatar/a8b9176bd0d042db078bf38500727671?d=https%3A%2F%2Fidenticons.github.com%2F14bae9f2564556f8eb23cc263a779f59.png&s=400",
+    "image": "http://www.lavraieprimaire.fr/img/logos/lvp_big.png",
     "domain": "lavraieprimaire.fr",
     "twitter": {
       "username": "@lavraieprimaire"
     }
   },
-  "logo": "/boot/logo.png",
+  "logo": "http://www.lavraieprimaire.fr/img/logos/lvp-big.png",
   "logoMobile": "/boot/logo-mobile.png",
   "favicon": "/boot/favicon.ico",
   "organizationName": "La Vraie Primaire",
