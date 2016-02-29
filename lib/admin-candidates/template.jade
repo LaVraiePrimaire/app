@@ -1,0 +1,39 @@
+#candidates-wrapper
+  .candidates-admin
+    .row.well.well-lg
+      .col-md-2.col-xs-12
+        a.btn.btn-success.btn-block.new(href='/admin/candidates/create')
+          span.glyphicon.glyphicon-plus
+          = ' ' + t('admin-candidates.list.add-candidate')
+      .col-md-7.col-xs-12.text-center
+        .input-group.input-group-md
+          span.input-group-addon
+            i.glyphicon.glyphicon-search
+          input.form-control.search(type='text', placeholder='#{t("admin-candidates.list.search.placeholder")}', autofocus)
+      .col-md-3.col-xs-12.text-center
+        .btn-group
+          span.sort-label.pull-left=t('admin-candidates.list.sort')
+          button.btn.btn-primary.sort(data-sort='candidate-date')
+            span.glyphicon.glyphicon-time
+          button.btn.btn-primary.sort(data-sort='candidate-title')
+            span.glyphicon.glyphicon-font
+    .row
+      .list.list-group
+        - each candidate in candidates
+          a.list-group-item(href="/admin/candidates/" + candidate.id, data-candidateid=candidate.id)
+            button.btn.btn-default.pull-right.delete-candidate
+              span.glyphicon.glyphicon-trash
+            h4.candidate-title=candidate.mediaTitle
+              small=candidate.candidateId
+            - if (candidate.author)
+              span.glyphicon.glyphicon-user
+              span.text=candidate.author
+            span.glyphicon.glyphicon-time
+            - if (candidate.closingAt)
+              - var date = new Date(candidate.closingAt)
+              - var relative = moment(date).fromNow()
+              - var when = (date < Date.now()) ? 'past' : 'future'
+              span.text=t('admin-candidates.list.close.' + when) + ' ' + relative
+            - else
+              span.text=t('article.unknown-closing-date')
+            span.candidate-date.hide=candidate.createdAt
