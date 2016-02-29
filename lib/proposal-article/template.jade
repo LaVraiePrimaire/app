@@ -22,7 +22,7 @@
         g#Page-1(fill='none', fill-rule='evenodd', sketch:type='MSPage')
           polygon#Polygon-1(d='M63,0 L125.353829,36 L125.353829,108 L63,144 L0.646170928,108 L0.646170928,36 L63,0 Z M63,0', sketch:type='MSShapeGroup', points='63 0 125.353829 36 125.353829 108 63 144 0.646170928 108 0.646170928 36 ')
 
-      div()=proposal.topicId
+      div()=proposal.candidateId
 
     .meta-information
       p
@@ -35,7 +35,7 @@
 
     h1=proposal.mediaTitle
     - if (proposal.author)
-      h2.author=t('admin-topics-form.label.author') + ': '
+      h2.author=t('admin-candidates-form.label.author') + ': '
         - if (proposal.authorUrl)
           a(href=proposal.authorUrl, target='_blank')=proposal.author
         - else
@@ -73,5 +73,5 @@
     //- Article share links
     - var text = config.tweetText || proposal.mediaTitle
     .share-links
-      a(target="_blank", href="http://www.facebook.com/sharer.php?u=#{baseUrl}/topic/#{proposal.id}").flaticon.social.facebook
-      a(target="_blank", href="http://twitter.com/share?text=#{text}&url=#{baseUrl}/topic/#{proposal.id}").flaticon.social.twitter
+      a(target="_blank", href="http://www.facebook.com/sharer.php?u=#{baseUrl}/candidate/#{proposal.id}").flaticon.social.facebook
+      a(target="_blank", href="http://twitter.com/share?text=#{text}&url=#{baseUrl}/candidate/#{proposal.id}").flaticon.social.twitter

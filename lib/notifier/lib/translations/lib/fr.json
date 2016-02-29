@@ -14,7 +14,7 @@
   "templates.comment-reply.body": "Vous avez une nouvelle réponse sur vous l'argument",
   "templates.comment-reply.body2": "Cliquez s'il vous plaît <a href=\"URL\">sur ici</a> pour voir",
 
-  "templates.topic-published.subject": "La nouvelle loi publiée",
-  "templates.topic-published.body": "Une nouvelle loi a été publiée:",
-  "templates.topic-published.body2": "Cliquez s'il vous plaît <a href=\"URL\">sur ici</a> pour voir"
+  "templates.candidate-published.subject": "La nouvelle loi publiée",
+  "templates.candidate-published.body": "Une nouvelle loi a été publiée:",
+  "templates.candidate-published.body2": "Cliquez s'il vous plaît <a href=\"URL\">sur ici</a> pour voir"
 }
