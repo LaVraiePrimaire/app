@@ -6,6 +6,17 @@
       input.form-control(type='text', name='links[#{link.id}][text]', value=link.text, validate='required', placeholder=t('admin-candidates-form.clause.label.text'))
     .link-group.link-url
       input.form-control(type='text', name='links[#{link.id}][url]', validate='url', value=link.url, placeholder=t('admin-candidates-form.url'))
+    .link-group.link-type
+      input.form-control(type='radio', name='links[#{link.id}][type]', value='facebook', checked=link.type==='facebook')#linkFacebook
+      label.form-control(for='linkFacebook') t('admin-candidates-form.type.facebook')
+      input.form-control(type='radio', name='links[#{link.id}][type]', value='twitter', checked=link.type==='twitter')#linkTwitter
+      label.form-control(for='linkTwitter') t('admin-candidates-form.type.twitter')
+      input.form-control(type='radio', name='links[#{link.id}][type]', value='wikipedia', checked=link.type==='wikipedia')#linkWikipedia
+      label.form-control(for='linkWikipedia') t('admin-candidates-form.type.wikipedia')
+      input.form-control(type='radio', name='links[#{link.id}][type]', value='media', checked=link.type==='media')#linkMedia
+      label.form-control(for='linkMedia') t('admin-candidates-form.type.media')
+      input.form-control(type='radio', name='links[#{link.id}][type]', value='personal', checked=link.type==='personal')#linkPersonal
+      label.form-control(for='linkPersonal') t('admin-candidates-form.type.personal')
     .link-group.link-commands
       a.remove-link.btn(href='#')
         span.glyphicon.glyphicon-trash

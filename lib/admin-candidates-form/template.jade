@@ -9,26 +9,29 @@
       input(type='hidden', name='_candidate_id_', value=candidate.id)
       ul.form-messages
       .form-group
-        label= t('admin-candidates-form.label.mediaTitle')
-        input.form-control(type='text', id="mediaTitle", name='mediaTitle', tabindex=1, placeholder=t('admin-candidates-form.label.mediaTitle'), value=candidate.mediaTitle, validate='required')
+        label= t('admin-candidates-form.label.firstName')
+        input.form-control(type='text', id="firstName", name='firstName', tabindex=1, placeholder=t('admin-candidates-form.label.firstName'), value=candidate.firstName, validate='required')
+      .form-group
+        label= t('admin-candidates-form.label.lastName')
+        input.form-control(type='text', id="lastName", name='lastName', tabindex=4, placeholder=t('admin-candidates-form.label.lastName'), value=candidate.lastName, validate='required')
       .form-group
         label= t('admin-candidates-form.label.candidateId')
         input.form-control(type='text', id="candidateId", name='candidateId', tabindex=3, placeholder=t('admin-candidates-form.label.candidateId'), value=candidate.candidateId)
       .form-group
-        label= t('admin-candidates-form.label.author')
-        input.form-control(type='text', id="candidateAuthor", name='candidateAuthor', tabindex=4, placeholder='John Doe', value=candidate.author, validate='author')
+        label= t('admin-candidates-form.label.postal')
+        input.form-control(type='text', id="postal", name='postal', tabindex=3, placeholder=t('admin-candidates-form.label.postal'), value=candidate.postal)
       .form-group
-        label= t('admin-candidates-form.label.author') + ' URL'
-        input.form-control(type='text', id="authorUrl", name='authorUrl', tabindex=5, placeholder='http://en.wikipedia.org/wiki/John_Doe', value=candidate.authorUrl, validate='url')
+        label= t('admin-candidates-form.label.email')
+        input.form-control(type='text', id="email", name='email', tabindex=3, placeholder=t('admin-candidates-form.label.email'), value=candidate.email)
+      .form-group
+        label= t('admin-candidates-form.label.phone')
+        input.form-control(type='text', id="phone", name='phone', tabindex=3, placeholder=t('admin-candidates-form.label.phone'), value=candidate.phone)
       .form-group
         label= t('admin-candidates-form.label.votable')
         .votable-toggle
       .form-group.hide
         label= t('admin-candidates-form.label.clause-truncation-text')
         input.form-control(type='text', name='bodyTruncationText', placeholder=t('common.read-more'), value=candidate.bodyTruncationText)
-      .form-group
-        label= t('admin-candidates-form.label.source')
-        input.form-control(type='url', name='source', tabindex=6, placeholder=t('admin-candidates-form.placeholder.source'), value=candidate.source, validate='url')
       .form-group
         label= t('admin-candidates-form.label.summary')
         textarea.form-control(name='body', tabindex=7)= candidate.body
@@ -63,6 +66,8 @@
       span=t('admin-candidates-form.button.make-private')
     a.btn.btn-primary.btn-block.make-public(class=candidate.draft && candidate.id ? '' : 'hide')
       span=t('admin-candidates-form.button.make-public')
+    a.btn.btn-primary.btn-block.accept-nomination(class=!candidate.acceptedNomination && candidate.id ? '' : 'hide')
+      span=t('admin-candidates-form.button.accept-nomination')
     - if (candidate.id)
       a.btn.btn-danger.btn-block.delete-candidate
         span=t('admin-candidates-form.delete-candidate.button.delete')
