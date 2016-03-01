@@ -55,8 +55,6 @@
           - if (candidate.links && candidate.links.length)
             - each link, id in candidate.links
               include link
-          - else
-              include link
         .pull-left
           a.add-link.btn.btn-block.btn-info(href='#')= t('admin-candidates-form.button.add-link')
           .form-group: input.btn.btn-success.btn-block.btn-lg.hide(type='submit', tabindex=12, value=t('admin-candidates-form.button.submit'))

@@ -1,9 +1,9 @@
-- var positives = proposal.upvotes || []
+- var votes = proposal.publicVotes || []
 
 - var participants = proposal.participants || []
 
 - var closed = proposal.closingAt && +new Date(proposal.closingAt) < Date.now()
-- var voted = user && ~positives.indexOf(user.id)
+- var voted = user && ~votes.indexOf(user.id)
 
 .inner-container.commentable-container(class=proposal.votable ? '' : 'hide')
 
@@ -11,8 +11,8 @@
     .vote-box
       div#voting-error.alert.alert-warning.hide #{t('proposal-options.error.voting')}.
       .meta-data(class= !!user.id ? '' : 'hide')
-        - if(~positives.indexOf(user.id))
-          include vote-positive
+        - if(~votes.indexOf(user.id))
+          include vote-alert
 
       .vote-options(class= voted || closed ? 'hide' : '')
         h5= t('proposal-options.vote')
@@ -29,19 +29,19 @@
             = '.'
 
       .votes-cast
-        em.text-muted= t('proposal-options.votes-cast', { num: positives.length || "0" })
+        em.text-muted= t('proposal-options.votes-cast', { num: votes.length || "0" })
 
     - if (closed)
       .results-box.row.clearfix
-        p.alert.alert-info(class=positives.length ? 'hide' : ''): label= t('proposal-options.no-votes-cast')
-        .results-chart(class= positives.length ? '' : 'hide').col-sm-6
+        p.alert.alert-info(class=votes.length ? 'hide' : ''): label= t('proposal-options.no-votes-cast')
+        .results-chart(class= votes.length ? '' : 'hide').col-sm-6
           canvas#results-chart(width="220", height="220")
-        .results-summary(class= positives.length ? '' : 'hide').col-sm-6
-          - if (positives.length)
+        .results-summary(class= votes.length ? '' : 'hide').col-sm-6
+          - if (votes.length)
             .votes-afirmative.votes-results
               h5= t('proposal-options.yea')
-              - var width = positives.length ? (positives.length/positives.length)*100 : 0;
+              - var width = votes.length ? (votes.length/votes.length)*100 : 0;
               - var width = Math.round(width*100)/100
-              - var s = 1 === positives.length ? '' : 's'
+              - var s = 1 === votes.length ? '' : 's'
               span.percent #{width} %
-              span.votes #{positives.length} #{t('proposal-options.vote-item') + s}
+              span.votes #{votes.length} #{t('proposal-options.vote-item') + s}
