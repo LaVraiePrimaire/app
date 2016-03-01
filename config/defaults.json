@@ -10,7 +10,7 @@
   "signinUrl": "",
   "signupUrl": "",
   "settingsUrl": "",
-  "staff": ["bkgoksel@gmail.com"],
+  "staff": ["bkgoksel@gmail.com", "mikeyu152@gmail.com"],
   "allowEmailAliases": true,
   "facebookSignin": false,
   "publicEmails": false,
