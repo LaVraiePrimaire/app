@@ -54,7 +54,7 @@
       //- Rendered by participants view
 
     //- Article share links
-    - var text = config.tweetText || proposal.mediaTitle
+    - var text = config.tweetText || (proposal.fullName + ' en La Vraie Primaire')
     .share-links
       a(target="_blank", href="http://www.facebook.com/sharer.php?u=#{baseUrl}/candidate/#{proposal.id}").flaticon.social.facebook
       a(target="_blank", href="http://twitter.com/share?text=#{text}&url=#{baseUrl}/candidate/#{proposal.id}").flaticon.social.twitter

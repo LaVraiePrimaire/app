@@ -9,7 +9,7 @@ mixin message (notification)
       span &nbsp;
       span=t('notifications.on')
       span &nbsp;
-      strong=notification.candidate.mediaTitle
+      strong=notification.candidate.fullName
     when 'downvote'
       strong=notification.relatedUser.fullName
       span &nbsp;
@@ -19,7 +19,7 @@ mixin message (notification)
       span &nbsp;
       span=t('notifications.on')
       span &nbsp;
-      strong=notification.candidate.mediaTitle
+      strong=notification.candidate.fullName
     when 'reply'
       strong=notification.relatedUser.fullName
       span &nbsp;
@@ -29,7 +29,7 @@ mixin message (notification)
       span &nbsp;
       span=t('notifications.on')
       span &nbsp;
-      strong=notification.candidate.mediaTitle
+      strong=notification.candidate.fullName
 
 .notifications-page
   h1=t('notifications.title')

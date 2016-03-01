@@ -23,7 +23,7 @@
           a.list-group-item(href="/admin/candidates/" + candidate.id, data-candidateid=candidate.id)
             button.btn.btn-default.pull-right.delete-candidate
               span.glyphicon.glyphicon-trash
-            h4.candidate-title=candidate.mediaTitle
+            h4.candidate-title=candidate.fullName
               small=candidate.candidateId
             - if (candidate.author)
               span.glyphicon.glyphicon-user
