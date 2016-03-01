@@ -7,8 +7,10 @@ li(data-id=item.id, class=active ? 'active' : '')
       if voted
         include ./check
 
-    span.title= item.mediaTitle
+    span.title= item.fullName
     span.created-by
+      if !item.acceptedNomination
+        t('proposal-article.not-accepted-nomination')
       if item.participants.length > 0
         - var cardinality = 1 === item.participants.length ? 'singular' : 'plural'
         = item.participants.length + ' ' + t('proposal-article.participant.' + cardinality)

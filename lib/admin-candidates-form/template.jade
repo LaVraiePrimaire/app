@@ -1,0 +1,73 @@
+
+#candidate-wrapper
+  .candidate-admin.col-md-9
+    .heading
+      .circle
+        i.icon-user
+      h1= t(form.title)
+    form.form-horizontal(action=form.action, method="post", role="form", autocomplete="off", novalidate, autovalidate='autovalidate', autosubmit='autosubmit')
+      input(type='hidden', name='_candidate_id_', value=candidate.id)
+      ul.form-messages
+      .form-group
+        label= t('admin-candidates-form.label.firstName')
+        input.form-control(type='text', id="firstName", name='firstName', tabindex=1, placeholder=t('admin-candidates-form.label.firstName'), value=candidate.firstName, validate='required')
+      .form-group
+        label= t('admin-candidates-form.label.lastName')
+        input.form-control(type='text', id="lastName", name='lastName', tabindex=2, placeholder=t('admin-candidates-form.label.lastName'), value=candidate.lastName, validate='required')
+      .form-group
+        label= t('admin-candidates-form.label.candidateId')
+        input.form-control(type='text', id="candidateId", name='candidateId', tabindex=3, placeholder=t('admin-candidates-form.label.candidateId'), value=candidate.candidateId)
+      .form-group
+        label= t('admin-candidates-form.label.postal')
+        input.form-control(type='text', id="postal", name='postal', tabindex=4, placeholder=t('admin-candidates-form.label.postal'), value=candidate.postal)
+      .form-group
+        label= t('admin-candidates-form.label.email')
+        input.form-control(type='text', id="email", name='email', tabindex=5, placeholder=t('admin-candidates-form.label.email'), value=candidate.email)
+      .form-group
+        label= t('admin-candidates-form.label.phone')
+        input.form-control(type='text', id="phone", name='phone', tabindex=6, placeholder=t('admin-candidates-form.label.phone'), value=candidate.phone)
+      .form-group
+        label= t('admin-candidates-form.label.votable')
+        .votable-toggle
+      .form-group.hide
+        label= t('admin-candidates-form.label.clause-truncation-text')
+        input.form-control(type='text', name='bodyTruncationText', placeholder=t('common.read-more'), value=candidate.bodyTruncationText)
+      .form-group
+        label= t('admin-candidates-form.label.summary')
+        textarea.form-control(name='body', tabindex=7)= candidate.body
+      .form-group.closingAt
+        label= t('admin-candidates-form.label.closingAt')
+        - var closingAt = ''
+        - var closingAtTime = ''
+        - if (candidate.closingAt)
+          - closingAt = new Date(candidate.closingAt)
+          - var closingAtTime = moment(closingAt).format('H:mm')
+          - closingAt = closingAt.getFullYear() + '/' + (closingAt.getMonth() + 1) + '/' + closingAt.getDate()
+        .input-group
+          input.form-control(name='closingAt', tabindex=10, readonly=true, value=closingAt)
+          span.input-group-addon.clear-closingAt
+            i.glyphicon.glyphicon-remove
+        .input-group
+          input.form-control(name='closingAtTime', tabindex=11, value=closingAtTime, placeholder='hh:mm', validate='time')
+      .form-group
+        label=t('admin-candidates-form.label.resources')
+        .candidate-links
+          - if (candidate.links && candidate.links.length)
+            - each link, id in candidate.links
+              include link
+        .pull-left
+          a.add-link.btn.btn-block.btn-info(href='#')= t('admin-candidates-form.button.add-link')
+          .form-group: input.btn.btn-success.btn-block.btn-lg.hide(type='submit', tabindex=12, value=t('admin-candidates-form.button.submit'))
+        span.add-link-forbidden.hide=t('admin-candidates-form.message.add-link-forbidden')
+  .col-md-3.commands
+    a.btn.btn-success.btn-block.save
+      span=t('admin-candidates-form.button.submit')
+    a.btn.btn-primary.btn-block.make-private(class=candidate.public && candidate.id ? '' : 'hide')
+      span=t('admin-candidates-form.button.make-private')
+    a.btn.btn-primary.btn-block.make-public(class=candidate.draft && candidate.id ? '' : 'hide')
+      span=t('admin-candidates-form.button.make-public')
+    a.btn.btn-primary.btn-block.accept-nomination(class=!candidate.acceptedNomination && candidate.id ? '' : 'hide')
+      span=t('admin-candidates-form.button.accept-nomination')
+    - if (candidate.id)
+      a.btn.btn-danger.btn-block.delete-candidate
+        span=t('admin-candidates-form.delete-candidate.button.delete')
