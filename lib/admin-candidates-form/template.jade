@@ -22,7 +22,7 @@
         input.form-control(type='text', id="postal", name='postal', tabindex=4, placeholder=t('admin-candidates-form.label.postal'), value=candidate.postal)
       .form-group
         label= t('admin-candidates-form.label.email')
-        input.form-control(type='text', id="email", name='email', tabindex=5, placeholder=t('admin-candidates-form.label.email'), value=candidate.email)
+        input.form-control(type='text', id="email", name='email', tabindex=5, placeholder=t('admin-candidates-form.label.email'), value=candidate.email, validate='required email')
       .form-group
         label= t('admin-candidates-form.label.phone')
         input.form-control(type='text', id="phone", name='phone', tabindex=6, placeholder=t('admin-candidates-form.label.phone'), value=candidate.phone)
