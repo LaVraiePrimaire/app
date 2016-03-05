@@ -24,10 +24,6 @@
             button.btn.btn-default.pull-right.delete-candidate
               span.glyphicon.glyphicon-trash
             h4.candidate-title=candidate.fullName
-              small=candidate.candidateId
-            - if (candidate.author)
-              span.glyphicon.glyphicon-user
-              span.text=candidate.author
             span.glyphicon.glyphicon-time
             - if (candidate.closingAt)
               - var date = new Date(candidate.closingAt)

@@ -15,17 +15,14 @@
         label= t('admin-candidates-form.label.lastName')
         input.form-control(type='text', id="lastName", name='lastName', tabindex=2, placeholder=t('admin-candidates-form.label.lastName'), value=candidate.lastName, validate='required')
       .form-group
-        label= t('admin-candidates-form.label.candidateId')
-        input.form-control(type='text', id="candidateId", name='candidateId', tabindex=3, placeholder=t('admin-candidates-form.label.candidateId'), value=candidate.candidateId)
-      .form-group
         label= t('admin-candidates-form.label.postal')
-        input.form-control(type='text', id="postal", name='postal', tabindex=4, placeholder=t('admin-candidates-form.label.postal'), value=candidate.postal)
+        input.form-control(type='text', id="postal", name='postal', tabindex=3, placeholder=t('admin-candidates-form.label.postal'), value=candidate.postal)
       .form-group
         label= t('admin-candidates-form.label.email')
-        input.form-control(type='text', id="email", name='email', tabindex=5, placeholder=t('admin-candidates-form.label.email'), value=candidate.email, validate='required email')
+        input.form-control(type='text', id="email", name='email', tabindex=4, placeholder=t('admin-candidates-form.label.email'), value=candidate.email, validate='required email')
       .form-group
         label= t('admin-candidates-form.label.phone')
-        input.form-control(type='text', id="phone", name='phone', tabindex=6, placeholder=t('admin-candidates-form.label.phone'), value=candidate.phone)
+        input.form-control(type='text', id="phone", name='phone', tabindex=5, placeholder=t('admin-candidates-form.label.phone'), value=candidate.phone)
       .form-group
         label= t('admin-candidates-form.label.votable')
         .votable-toggle
