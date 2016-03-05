@@ -1,8 +1,9 @@
 {
   "locale": "fr",
   "protocol": "http",
-  "host": "http://lvp-59865.onmodulus.net/",
+  "host": "localhost",
   "publicPort": 3000,
+  "mongoUrl": "mongodb://localhost/test",
   "mongoUsersUrl": "",
   "jwtSecret": "Generate a secret token and paste it here.",
   "corsDomains": [],
