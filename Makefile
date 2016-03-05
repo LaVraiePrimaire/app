@@ -22,7 +22,7 @@ build: packages
 
 packages:
 	@echo "Installing dependencies..."
-#	@npm install
+	@npm install
 
 clean:
 	@echo "Removing dependencies, components and built assets..."
