@@ -3,7 +3,6 @@
   "protocol": "http",
   "host": "http://lvp-59865.onmodulus.net/",
   "publicPort": 3000,
-  "mongoUrl": "mongodb://lvp-admin:France2017@waffle.modulusmongo.net:27017/Pih4epaq",
   "mongoUsersUrl": "",
   "jwtSecret": "Generate a secret token and paste it here.",
   "corsDomains": [],
@@ -36,8 +35,7 @@
     "token": "",
     "mailer": {
       "name": "La Vraie Primaire",
-      "email": "no-reply@lavraieprimaire.fr",
-	  "apiKey": "tyEIUHz8RdZvV5Jw"
+      "email": "no-reply@lavraieprimaire.fr"
     }
   },
   "client": [
