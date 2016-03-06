@@ -10,19 +10,12 @@
 
   article.proposal.commentable-container
 
-    .meta-information
-      p
-        i.icon-time
-        - if (proposal.closingAt)
-          span.time-ago-label= (closed ? t('common.closed') : t('common.close')) + " "
-          span.meta-item.meta-timeago.ago(data-time=proposal.closingAt.toString())
-        - else
-          span.meta-item.meta-timeago= t('proposal-article.unknown-closing-date')
-
     h1=proposal.fullName
     - if (!proposal.acceptedNomination)
       h2.accepted-nomination= t('proposal-article.not-accepted')
-    .entry-content
+    - if (proposal.pictureUrl)
+        img.picture(src=proposal.pictureUrl)
+
       .clauses
         - var clauses = proposal.clauses
         each clause, i in clauses
@@ -30,16 +23,23 @@
           - classes.push(clause.empty ? 'hide' : 'commentable-section')
           !=toHTML(clause, { className: classes, iframeResponsive: true })
 
-    // Contact info
-    .contact
-      - if (proposal.phone)
-          p=proposal.phone
-
-       - if (proposal.email)
-          p=proposal.email
-
-       - if (proposal.postal)
-          p=proposal.postal
+    .entry-content
+      .charte
+        .clause
+          h3=t('charte.clause1')
+          p=proposal.whatIsLife
+        .clause
+          h3=t('charte.clause2')
+          p=proposal.secondChartePos
+        .clause
+          h3=t('charte.clause3')
+          p=proposal.thirdChartePos
+        .clause
+          h3=t('charte.clause4')
+          p=proposal.fourthChartePos
+        .clause
+          h3=t('charte.clause5')
+          p=proposal.fifthChartePos
 
     //- Article links
     - if (proposal.links && proposal.links.length)

@@ -15,6 +15,9 @@
         label= t('admin-candidates-form.label.lastName')
         input.form-control(type='text', id="lastName", name='lastName', tabindex=2, placeholder=t('admin-candidates-form.label.lastName'), value=candidate.lastName, validate='required')
       .form-group
+        label= t('admin-candidates-form.charte.pictureUrl')
+        input.form-control(type='text', name='pictureUrl', placeholder=t('admin-candidates-form.pictureUrl'), value=candidate.pictureUrl)
+      .form-group
         label= t('admin-candidates-form.label.postal')
         input.form-control(type='text', id="postal", name='postal', tabindex=3, placeholder=t('admin-candidates-form.label.postal'), value=candidate.postal)
       .form-group
@@ -29,6 +32,21 @@
       .form-group.hide
         label= t('admin-candidates-form.label.clause-truncation-text')
         input.form-control(type='text', name='bodyTruncationText', placeholder=t('common.read-more'), value=candidate.bodyTruncationText)
+      .form-group
+        label= t('admin-candidates-form.charte.clause1')
+        input.form-control(type='text', id='whatIsLife', name='whatIsLife', placeholder=t('admin-candidates-form.charte.clause1'), value=candidate.whatIsLife)
+      .form-group
+        label= t('admin-candidates-form.charte.clause2')
+        input.form-control(type='text', id='secondChartePos', name='secondChartePos', placeholder=t('admin-candidates-form.charte.clause2'), value=candidate.secondChartePos)
+      .form-group
+        label= t('admin-candidates-form.charte.clause3')
+        input.form-control(type='text', id='thirdChartePos', name='thirdChartePos', placeholder=t('admin-candidates-form.charte.clause3'), value=candidate.thirdChartePos)
+      .form-group
+        label= t('admin-candidates-form.charte.clause4')
+        input.form-control(type='text', id='fourthChartePos', name='fourthChartePos', placeholder=t('admin-candidates-form.charte.clause4'), value=candidate.fourthChartePos)
+      .form-group
+        label= t('admin-candidates-form.charte.clause5')
+        input.form-control(type='text', id='fifthChartePos', name='fifthChartePos', placeholder=t('admin-candidates-form.charte.clause5'), value=candidate.fifthChartePos)
       .form-group
         label= t('admin-candidates-form.label.summary')
         textarea.form-control(name='body', tabindex=7)= candidate.body
