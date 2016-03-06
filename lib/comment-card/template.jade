@@ -11,6 +11,8 @@ li.media.comment-item(class=classes)
     h5.media-heading(title=comment.author.displayName)
       | #{comment.author.fullName}
       small.ago(data-time=comment.createdAt.toString())
+      - if (comment.selfComment)
+        this is a self comment!
       - if (comment.editedAt)
         small.edited · #{t('comments.edited')}
       - if (own)
