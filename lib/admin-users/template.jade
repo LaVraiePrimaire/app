@@ -1,0 +1,31 @@
+WHAT IS GOING ON
+#users-wrapper
+  .users-admin
+    .row.well.well-lg
+      .col-md-8.col-xs-12.text-center
+        .input-group.input-group-md
+          span.input-group-addon
+            i.glyphicon.glyphicon-search
+          input.form-control.search(type='text', placeholder='#{t("admin-users.list.search.placeholder")}', autofocus)
+      .col-md-4.col-xs-12.text-center
+        .btn-group
+          span.sort-label.pull-left=t('admin-users.list.sort')
+          button.btn.btn-primary.sort(data-sort='user-firstName')
+            span.glyphicon.glyphicon-time
+          button.btn.btn-primary.sort(data-sort='user-lastName')
+            span.glyphicon.glyphicon-font
+          button.btn.btn-primary.sort(data-sort='user-email')
+            span.glyphicon.glyphicon-font
+    .row
+      .list.list-group
+        - each user in users
+          a.list-group-item(data-userid=user.id)
+            if (user.disabledAt)
+              button.btn.btn-default.pull-right.unban-user
+                span.glyphicon.glyphicon-ok
+            else
+              button.btn.btn-default.pull-right.delete-user
+                span.glyphicon.glyphicon-trash
+            h4.user-title=user.firstName + " " + user.lastName
+            h5=user.email
+            span.user-date.hide=user.createdAt
