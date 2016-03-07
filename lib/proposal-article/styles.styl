@@ -11,16 +11,23 @@ article.proposal
 
   .entry-content
     font-family 'Roboto Slab', serif
-    font-weight: 300
+    font-weight 300
     line-height 1.6
 
-  a:hover
-    color #3d699e
-    text-decoration underline
+  a
+    color #1A5CE5
 
-  h1
+    &:hover
+      color #1240B2
+
+  h1,h4
     margin-top 0
-
+    text-transform uppercase
+    color #D3091D
+    font-weight 100
+  span
+    text-align left
+    width auto
   .body
     font-size 110%
   .summary
@@ -28,18 +35,19 @@ article.proposal
     margin 40px 0
 
   .clauses
-    margin-top 20px
 
     .clause
-      margin-bottom 20px
+      margin-bottom 10px
       word-wrap break-word
+      text-align left
       img
         width 100%
 
   h2.accepted-nomination
     color #63666A
     font-size 16px
-    font-weight normal
+    font-weight 300
+    font-style italic
     margin 0
 
   .meta-information
@@ -59,9 +67,22 @@ article.proposal
       margin-right 10px
       border-radius 0
 
+  h3
+    margin: 2px 0
+
+  .row
+    margin 5% 0 0 0
+
+  img.picture
+    max-width 300px
+    width 41.667%
+    margin-left 16.667%
+    margin-bottom 5%
+    float right
+
   hr
-    border-top 4px solid #eee
-    width 50%
+    border-top 4px solid #ecf0f1
+    width 100%
 
   .read-more
     display block
@@ -92,26 +113,34 @@ article.proposal
 
   .links
     background-color #ecf0f1
-    padding 6px 12px
+    padding 6px 0
     p
       margin 0
       margin-bottom 5px
       padding-left 12px
       font-size 12px
       margin-right 5px
-      a
-        font-size 14px
-        color #1A5CE5
-        font-weight bold
-
+    ul
+      list-style-type none
+      padding-left 0
+      li
+        display inline
+        padding 3px 6px
+        a
+          font-size 14px
+          color #1A5CE5
+          font-weight bold
+  .col-xs-5
+    padding 0
   .share-links
+    padding 9px 0
     margin-bottom 40px
     a
       background #63666A
       padding 10px
       margin-right 10px
       border-radius border_radius
-      color white
+      color #ecf0f1
       display inline-block
       line-height 10px
       -webkit-transition all 0.3s ease

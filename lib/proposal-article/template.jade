@@ -13,9 +13,17 @@
     h1=proposal.fullName
     - if (!proposal.acceptedNomination)
       h2.accepted-nomination= t('proposal-article.not-accepted')
+    hr
     - if (proposal.pictureUrl)
+      .row
         img.picture(src=proposal.pictureUrl)
-
+        .clauses
+          - var clauses = proposal.clauses
+          each clause, i in clauses
+            - var classes = ['clause']
+            - classes.push(clause.empty ? 'hide' : 'commentable-section')
+            !=toHTML(clause, { className: classes, iframeResponsive: true })
+    - else
       .clauses
         - var clauses = proposal.clauses
         each clause, i in clauses
@@ -41,20 +49,29 @@
           h3=t('charte.clause5')
           p=proposal.fifthChartePos
 
-    //- Article links
-    - if (proposal.links && proposal.links.length)
-      .links
-        h5=t('common.more-information')
-        - each link in proposal.links
-          p
-            a(target="_blank", href=link.url)=link.type
+    hr
 
+    .row
+      //- Article share links
+      - var text = config.tweetText || (proposal.fullName + ' en La Vraie Primaire')
+      .col-xs-5
+        h4=t('social links')
+        .share-links
+          a(target="_blank", href="http://www.facebook.com/sharer.php?u=#{baseUrl}/candidate/#{proposal.id}").flaticon.social.facebook
+          a(target="_blank", href="http://twitter.com/share?text=#{text}&url=#{baseUrl}/candidate/#{proposal.id}").flaticon.social.twitter
+      .col-xs-2
+
+      //- Article links
+      - if (proposal.links && proposal.links.length)
+        .col-xs-5
+          h4=t('common.more-information')
+          .links
+            ul
+              - each link in proposal.links
+                li
+                  a(target="_blank", href=link.url)=link.type
     //- Article participants
     .participants(class=proposal.votable ? '' : 'hide')
       //- Rendered by participants view
 
-    //- Article share links
-    - var text = config.tweetText || (proposal.fullName + ' en La Vraie Primaire')
-    .share-links
-      a(target="_blank", href="http://www.facebook.com/sharer.php?u=#{baseUrl}/candidate/#{proposal.id}").flaticon.social.facebook
-      a(target="_blank", href="http://twitter.com/share?text=#{text}&url=#{baseUrl}/candidate/#{proposal.id}").flaticon.social.twitter
+    
