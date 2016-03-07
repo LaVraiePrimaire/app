@@ -15,7 +15,6 @@
           include vote-alert
 
       .vote-options(class= voted || closed ? 'hide' : '')
-        h5= t('proposal-options.vote')
         .direct-vote
           a.vote-option.vote-yes(href="#", data-proposal=proposal.id)
             i.flaticon.solid.thumbs-up-1

@@ -33,21 +33,31 @@
 
     .entry-content
       .charte
+        hr.charte-separator
         .clause
-          h3=t('charte.clause1')
-          p=proposal.whatIsLife
+          h2.accepted-nomination=t('charte.title1')
+          p.charte-clause=t('charte.clause1')
+          p.charte-position=proposal.whatIsLife
+        hr.charte-separator
         .clause
-          h3=t('charte.clause2')
-          p=proposal.secondChartePos
+          h2.accepted-nomination=t('charte.title2')
+          p.charte-clause=t('charte.clause2')
+          p.charte-position=proposal.secondChartePos
+        hr.charte-separator
         .clause
-          h3=t('charte.clause3')
-          p=proposal.thirdChartePos
+          h2.accepted-nomination=t('charte.title3')
+          p.charte-clause=t('charte.clause3')
+          p.charte-position=proposal.thirdChartePos
+        hr.charte-separator
         .clause
-          h3=t('charte.clause4')
-          p=proposal.fourthChartePos
+          h2.accepted-nomination=t('charte.title4')
+          p.charte-clause=t('charte.clause4')
+          p.charte-position=proposal.fourthChartePos
+        hr.charte-separator
         .clause
-          h3=t('charte.clause5')
-          p=proposal.fifthChartePos
+          h2.accepted-nomination=t('charte.title5')
+          p.charte-clause=t('charte.clause5')
+          p.charte-position=proposal.fifthChartePos
 
     hr
 
