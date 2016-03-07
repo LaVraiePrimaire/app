@@ -53,9 +53,6 @@
       .form-group
         label= t('admin-candidates-form.charte.clause5')
         input.form-control(type='text', id='fifthChartePos', name='fifthChartePos', placeholder=t('admin-candidates-form.charte.clause5'), value=candidate.fifthChartePos)
-      .form-group
-        label= t('admin-candidates-form.label.summary')
-        textarea.form-control(name='body', tabindex=7)= candidate.body
       .form-group.closingAt
         label= t('admin-candidates-form.label.closingAt')
         - var closingAt = ''
