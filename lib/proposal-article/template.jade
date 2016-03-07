@@ -18,18 +18,8 @@
       .row
         img.picture(src=proposal.pictureUrl)
         .clauses
-          - var clauses = proposal.clauses
-          each clause, i in clauses
-            - var classes = ['clause']
-            - classes.push(clause.empty ? 'hide' : 'commentable-section')
-            !=toHTML(clause, { className: classes, iframeResponsive: true })
     - else
       .clauses
-        - var clauses = proposal.clauses
-        each clause, i in clauses
-          - var classes = ['clause']
-          - classes.push(clause.empty ? 'hide' : 'commentable-section')
-          !=toHTML(clause, { className: classes, iframeResponsive: true })
 
     .entry-content
       .charte
