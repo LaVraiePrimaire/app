@@ -38,15 +38,15 @@
               ul
                 - each link in proposal.links
                   li
-                    a(target="_blank", href=link.url)=link.url
+                    a(target="_blank", href=link.url)=link.type
         .clauses
 
     hr
 
     .entry-content
       .row(class=isCharte ? 'hide':'')
-        h3.chartlead='charte citoyenne'
-        a(href=charteLink)='review charte citoyenne'
+        h3.chartlead='position sur la charte citoyenne'
+        a(href=charteLink, target="_blank")='voir la charte citoyenne'
       .charte
         .row.clause
           .col-xs-4(class=isCharte ? 'taller':'')
