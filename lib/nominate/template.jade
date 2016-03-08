@@ -1,5 +1,6 @@
 #nominate-wrapper
-  .nominate-candidate.col-md-9
+  .col-xs-12.col-sm-2
+  .nominate-candidate.col-xs-12.col-sm-8
     .heading
       .circle
         i.icon-user
@@ -39,3 +40,5 @@
         label= t('nominate-form.label.facebook')
         input.form-control(type='text', id="facebook", name='facebook', placeholder=t('nominate-form.label.facebook'), validate='url')
       .form-group: input.btn.btn-success.btn-block.btn-lg(type='submit', value=t('nominate-form.button.submit'))
+    .col-xs-12.col-sm-2
+
