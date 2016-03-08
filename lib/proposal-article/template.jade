@@ -44,10 +44,9 @@
     hr
 
     .entry-content
-      if (!isCharte)
-        .row
-          h3.chartlead='charte citoyenne'
-          a(proposalhref="#chartpage")='review charte citoyenne'
+      .row(class=isCharte ? 'hide':'')
+        h3.chartlead='charte citoyenne'
+        a(href=charteLink)='review charte citoyenne'
       .charte
         .row.clause
           .col-xs-4.chartetitle
