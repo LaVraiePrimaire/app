@@ -1,0 +1,41 @@
+#nominate-wrapper
+  .nominate-candidate.col-md-9
+    .heading
+      .circle
+        i.icon-user
+      h1= t(form.title)
+    form.form-horizontal(action=form.action, method="post", role="form", autocomplete="off", novalidate, autovalidate='autovalidate', autosubmit='autosubmit')
+      input(type='hidden', name='_user_id', value=user.id)
+      input(type='hidden', name='_user_email', value=user.email)
+      input(type='hidden', name='_user_firstName', value=user.firstName)
+      input(type='hidden', name='_user_lastName', value=user.lastName)
+      ul.form-messages
+      .form-group
+        label.self
+          input.form-control(type='radio', name='nominationType', value='self')
+          | t('nominate-form.label.self)
+        label.third-party
+          input.form-control(type='radio', name='nominationType', value'third party')
+          | t('nominate-form.label.third-party')
+      .form-group.not-for-self
+        label= t('nominate-form.label.firstName')
+        input.form-control(type='text', id="firstName", name='firstName', placeholder=t('nominate-form.label.firstName'))
+      .form-group.not-for-self
+        label= t('nominate-form.label.lastName')
+        input.form-control(type='text', id="lastName", name='lastName', placeholder=t('nominate-form.label.lastName'))
+      .form-group
+        label= t('nominate-form.label.pictureUrl')
+        input.form-control(type='text', name='pictureUrl', placeholder=t('nominate-form.pictureUrl'), validate='url')
+      .form-group
+        label= t('nominate-form.label.postal')
+        input.form-control(type='text', id="postal", name='postal', placeholder=t('nominate-form.label.postal'), validate='required')
+      .form-group
+        label= t('nominate-form.label.phone')
+        input.form-control(type='text', id="phone", name='phone', placeholder=t('nominate-form.label.phone'), validate='required')
+      .form-group
+        label= t('nominate-form.label.internet')
+        input.form-control(type='text', id="internet", name='internet', placeholder=t('nominate-form.label.internet'), validate='url')
+      .form-group
+        label= t('nominate-form.label.facebook')
+        input.form-control(type='text', id="facebook", name='facebook', placeholder=t('nominate-form.label.facebook'), validate='url')
+      .form-group: input.btn.btn-success.btn-block.btn-lg(type='submit', value=t('nominate-form.button.submit'))
