@@ -33,6 +33,15 @@
         label= t('admin-candidates-form.label.phone')
         input.form-control(type='text', id="phone", name='phone', tabindex=5, placeholder=t('admin-candidates-form.label.phone'), value=candidate.phone)
       .form-group
+        label= t('admin-candidate-form.label.prop1')
+        input.form-control(type='textarea', id='firstProp', name='firstProp' value=candidate.firstProp, placeholder=t('admin-candidate-form.label.prop1'))
+      .form-group
+        label= t('admin-candidate-form.label.prop2')
+        input.form-control(type='textarea', id='secondProp', name='secondProp' value=candidate.secondProp, placeholder=t('admin-candidate-form.label.prop2'))
+      .form-group
+        label= t('admin-candidate-form.label.prop3')
+        input.form-control(type='textarea', id='thirdProp', name='thirdProp' value=candidate.thirdProp, placeholder=t('admin-candidate-form.label.prop3'))
+      .form-group
         label= t('admin-candidates-form.label.votable')
         .votable-toggle
       .form-group.hide
