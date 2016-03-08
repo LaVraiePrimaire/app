@@ -1,4 +1,5 @@
 - var closed = proposal.closed
+- var isCharte = proposal.firstName === 'Charte'
 .inner-container
   - var learnMore = config.learnMoreUrl
   - if (learnMore)
@@ -13,38 +14,40 @@
     h1=proposal.fullName
     - if (!proposal.acceptedNomination && proposal.nominatorName)
       h2.accepted-nomination= t('proposal-article.nominated-by-other')+proposal.nominatorName
-    hr
-    .row
-      .col-xs-6
-        h3='3 priorités'
-        ul
-          li
-            p=proposal.firstProp
-          li
-            p=proposal.secondProp
-          li
-            p=proposal.thirdProp
-      .col-xs-1
+    - if (!isCharte)
+      hr
+      .row
+        .col-xs-6
+          h3='3 priorités'
+          ul
+            li
+              p=proposal.firstProp
+            li
+              p=proposal.secondProp
+            li
+              p=proposal.thirdProp
+        .col-xs-1
 
-      //- Article links
-      - if (proposal.links && proposal.links.length)
-        .col-xs-5
-          - if (proposal.pictureUrl)
-            .row
-              img.picture(src=proposal.pictureUrl)
-          .links
-            ul
-              - each link in proposal.links
-                li
-                  a(target="_blank", href=link.url)=link.url
-      .clauses
+        //- Article links
+        - if (proposal.links && proposal.links.length)
+          .col-xs-5
+            - if (proposal.pictureUrl)
+              .row
+                img.picture(src=proposal.pictureUrl)
+            .links
+              ul
+                - each link in proposal.links
+                  li
+                    a(target="_blank", href=link.url)=link.url
+        .clauses
 
     hr
 
     .entry-content
-      .row
-        h3.chartlead='charte citoyenne'
-        a(href="#chartpage")='review charte citoyenne'
+      if (!isCharte)
+        .row
+          h3.chartlead='charte citoyenne'
+          a(proposalhref="#chartpage")='review charte citoyenne'
       .charte
         .row.clause
           .col-xs-4.chartetitle
@@ -88,5 +91,5 @@
         a(target="_blank", href="http://twitter.com/share?text=#{text}&url=#{baseUrl}/candidate/#{proposal.id}").flaticon.social.twitter
 
     //- Article participants
-    .participants(class=proposal.votable ? '' : 'hide')
+    .participants(class=!isCharte && proposal.votable ? '' : 'hide')
       //- Rendered by participants view
