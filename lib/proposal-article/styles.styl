@@ -66,34 +66,44 @@ article.proposal
       word-wrap break-word
       text-align left
       .col-xs-4.chartetitle
-        display table
-        vertical-align middle
         height 35
         padding 8px 4px
         text-align right
         border-right-style solid
         border-right-width 1px
         border-right-color #63666A
-        h5
-          font-size 1.2vw
-          margin: 0
-          display table-cell
-          vertical-align middle
+        .faketable
           text-align right
+          display table
+          vertical-align middle
+          overflow scroll
+          height 100%
+          width 100%
+          h5
+            font-size 1vw
+            margin: 0
+            display table-cell
+            vertical-align middle
+            text-align right
       .col-xs-8
-        display table
         padding-left 10px
         height 35
         overflow scroll
-        vertical-align middle
-        p
-          font-size .8vw
-          margin: 0
-          display table-cell
+        .faketable
+          display table
           vertical-align middle
-
-
+          overflow scroll
+          height 100%
+          p
+            font-size .8vw
+            margin: 0
+            display table-cell
+            vertical-align middle
+            overflow scroll
       margin: 0
+    .alt
+      background-color: #CDD3D7
+
 
   h2.accepted-nomination
     color #63666A
