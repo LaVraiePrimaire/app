@@ -11,6 +11,7 @@
   "signupUrl": "",
   "settingsUrl": "",
   "staff": ["bkgoksel@gmail.com", "mikeyu152@gmail.com"],
+  "charteLink": "http://lvp.mod.bz/candidate/56deabca58810cf200ca08ed",
   "allowEmailAliases": true,
   "facebookSignin": false,
   "publicEmails": false,
