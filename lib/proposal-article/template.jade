@@ -96,7 +96,7 @@
     hr
 
     .row
-      //- Article share links
+      //- Article share link
       - var text = config.tweetText || (proposal.fullName + ' en La Vraie Primaire')
       h3=t("proposal-article.article.sociallinks")
       .share-links
@@ -104,28 +104,28 @@
         a(target="_blank", href="http://twitter.com/share?text=#{text}&url=#{baseUrl}/candidate/#{proposal.id}").flaticon.social.twitter
 
             
-  .proposal-options
-    .vote-box
-      div#voting-error.alert.alert-warning.hide #{t('proposal-options.error.voting')}.
-      .meta-data(class= !!user.id ? '' : 'hide')
-        - if(~votes.indexOf(user.id))
-          include vote-alert
+    .proposal-options(class=isCharte ? 'hide' : '')
+      .vote-box
+        div#voting-error.alert.alert-warning.hide #{t('proposal-options.error.voting')}.
+        .meta-data(class= !!user.id ? '' : 'hide')
+          - if(~votes.indexOf(user.id))
+            include vote-alert
 
-      .vote-options(class= voted || closed ? 'hide' : '')
-        .direct-vote
-          a.vote-option.vote-yes(href="#", data-proposal=proposal.id)
-            i.flaticon.solid.thumbs-up-1
-            span= t('proposal-options.yea')
+        .vote-options(class= voted || closed ? 'hide' : '')
+          .direct-vote
+            a.vote-option.vote-yes(href="#", data-proposal=proposal.id)
+              i.flaticon.solid.thumbs-up-1
+              span= t('proposal-options.yea')
 
-        - if (!user.id)
-          p.text-mute.overlay-vote.hide= t('proposal-options.must-be-signed-in') + '. '
-            a(href="/signin")= t('signin.login')
-            = ' ' + t('common.or') + ' '
-            a(href="/signup?reference=" + reference)= t('signin.signup')
-            = '.'
+          - if (!user.id)
+            p.text-mute.overlay-vote.hide= t('proposal-options.must-be-signed-in') + '. '
+              a(href="/signin")= t('signin.login')
+              = ' ' + t('common.or') + ' '
+              a(href="/signup?reference=" + reference)= t('signin.signup')
+              = '.'
 
-      .votes-cast
-        em.text-muted= t('proposal-options.votes-cast', { num: votes.length || "0" })
+        .votes-cast
+          em.text-muted= t('proposal-options.votes-cast', { num: votes.length || "0" })
     //- Article participants
     .participants(class=!isCharte && proposal.votable ? '' : 'hide')
       //- Rendered by participants view
