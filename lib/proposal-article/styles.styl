@@ -9,10 +9,11 @@ article.proposal
   min-height 300px
   position relative
 
-  .entry-content
+  p
     font-family 'Roboto Slab', serif
     font-weight 300
     line-height 1.6
+    font-size 14
 
   a
     color #1A5CE5
@@ -20,11 +21,17 @@ article.proposal
     &:hover
       color #1240B2
 
-  h1,h4
+  .col-xs-1,.col-xs-5,.col-xs-6
+    padding: 0
+  ul
+    list-style-type none
+    padding-left 0
+  h1,h3
     margin-top 0
     text-transform uppercase
     color #D3091D
     font-weight 100
+    margin-bottom 15px
   span
     text-align left
     width auto
@@ -33,6 +40,15 @@ article.proposal
   .summary
     font-size 16px
     margin 40px 0
+  .entry-content
+    .row
+      margin-bottom 20px
+      h3.chartlead
+        margin-bottom 5px
+      a
+        margin-bottom 15px
+        font-size 14px
+        font-weight 300
 
   .clauses
 
@@ -44,22 +60,45 @@ article.proposal
         width 100%
   
   .charte
-    
+    margin-bottom 20px
     .clause
       border margin-bottom 5px
       word-wrap break-word
       text-align left
+      .col-xs-4.chartetitle
+        display table
+        vertical-align middle
+        height 35
+        padding 8px 4px
+        text-align right
+        border-right-style solid
+        border-right-width 1px
+        border-right-color #63666A
+        h5
+          font-size 1.2vw
+          margin: 0
+          display table-cell
+          vertical-align middle
+          text-align right
+      .col-xs-8
+        display table
+        padding-left 10px
+        height 35
+        overflow scroll
+        vertical-align middle
+        p
+          font-size .8vw
+          margin: 0
+          display table-cell
+          vertical-align middle
 
-    hr.charte-separator
-      border-top 0px
-      width 80% 
-      
 
-  h2.accepted-nomination
+      margin: 0
+
+  h5.accepted-nomination
     color #63666A
-    font-size 16px
+    font-size 1.2vw
     font-weight 300
-    font-style italic
     margin 0
 
   .meta-information
@@ -88,16 +127,13 @@ article.proposal
     font-size 14px
 
   h3
-    margin: 2px 0
+    font-size: 24
 
   .row
     margin 5% 0 0 0
 
   img.picture
-    max-width 300px
-    width 41.667%
-    margin-left 16.667%
-    margin-bottom 5%
+    width 100%
     float right
 
   hr
@@ -141,17 +177,14 @@ article.proposal
       font-size 12px
       margin-right 5px
     ul
-      list-style-type none
-      padding-left 0
       li
-        display inline
-        padding 3px 6px
+        padding 0px 6px
+        text-align left
         a
           font-size 14px
-          color #1A5CE5
-          font-weight bold
-  .col-xs-5
-    padding 0
+          font-weight 300
+          &:hover
+            font-weight 400
   .share-links
     padding 9px 0
     margin-bottom 40px

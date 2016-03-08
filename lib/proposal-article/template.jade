@@ -11,67 +11,82 @@
   article.proposal.commentable-container
 
     h1=proposal.fullName
-    - if (!proposal.acceptedNomination)
-      h2.accepted-nomination= t('proposal-article.not-accepted')
+    - if (!proposal.acceptedNomination && proposal.nominatorName)
+      h2.accepted-nomination= t('proposal-article.nominated-by-other')+proposal.nominatorName
     hr
-    - if (proposal.pictureUrl)
-      .row
-        img.picture(src=proposal.pictureUrl)
-        .clauses
-    - else
+    .row
+      .col-xs-6
+        h3='3 priorités'
+        ul
+          li
+            p=proposal.firstProp
+          li
+            p=proposal.secondProp
+          li
+            p=proposal.thirdProp
+      .col-xs-1
+
+      //- Article links
+      - if (proposal.links && proposal.links.length)
+        .col-xs-5
+          - if (proposal.pictureUrl)
+            .row
+              img.picture(src=proposal.pictureUrl)
+          .links
+            ul
+              - each link in proposal.links
+                li
+                  a(target="_blank", href=link.url)=link.url
       .clauses
 
+    hr
+
     .entry-content
+      .row
+        h3.chartlead='charte citoyenne'
+        a(href="#chartpage")='review charte citoyenne'
       .charte
-        hr.charte-separator
-        .clause
-          h2.accepted-nomination=t('charte.title1')
-          p.charte-clause=t('charte.clause1')
-          p.charte-position=proposal.whatIsLife
-        hr.charte-separator
-        .clause
-          h2.accepted-nomination=t('charte.title2')
-          p.charte-clause=t('charte.clause2')
-          p.charte-position=proposal.secondChartePos
-        hr.charte-separator
-        .clause
-          h2.accepted-nomination=t('charte.title3')
-          p.charte-clause=t('charte.clause3')
-          p.charte-position=proposal.thirdChartePos
-        hr.charte-separator
-        .clause
-          h2.accepted-nomination=t('charte.title4')
-          p.charte-clause=t('charte.clause4')
-          p.charte-position=proposal.fourthChartePos
-        hr.charte-separator
-        .clause
-          h2.accepted-nomination=t('charte.title5')
-          p.charte-clause=t('charte.clause5')
-          p.charte-position=proposal.fifthChartePos
+        .row.clause
+          .col-xs-4.chartetitle
+            h5.accepted-nomination=t('charte.title1')
+            //p.charte-clause=t('charte.clause1')
+          .col-xs-8
+            p.charte-position=proposal.whatIsLife
+        .row.clause
+          .col-xs-4.chartetitle
+            h5.accepted-nomination=t('charte.title2')
+            //p.charte-clause=t('charte.clause2')
+          .col-xs-8
+            p.charte-position=proposal.secondChartePos
+        .row.clause
+          .col-xs-4.chartetitle
+            h5.accepted-nomination=t('charte.title3')
+            //p.charte-clause=t('charte.clause3')
+          .col-xs-8
+            p.charte-position=proposal.thirdChartePos
+        .row.clause
+          .col-xs-4.chartetitle
+            h5.accepted-nomination=t('charte.title4')
+            //p.charte-clause=t('charte.clause4')
+          .col-xs-8
+            p.charte-position=proposal.fourthChartePos
+        .row.clause
+          .col-xs-4.chartetitle
+            h5.accepted-nomination=t('charte.title5')
+            //p.charte-clause=t('charte.clause5')
+          .col-xs-8
+            p.charte-position=proposal.fifthChartePos
 
     hr
 
     .row
       //- Article share links
       - var text = config.tweetText || (proposal.fullName + ' en La Vraie Primaire')
-      .col-xs-5
-        h4=t('social links')
-        .share-links
-          a(target="_blank", href="http://www.facebook.com/sharer.php?u=#{baseUrl}/candidate/#{proposal.id}").flaticon.social.facebook
-          a(target="_blank", href="http://twitter.com/share?text=#{text}&url=#{baseUrl}/candidate/#{proposal.id}").flaticon.social.twitter
-      .col-xs-2
+      h3=t("proposal-article.article.sociallinks")
+      .share-links
+        a(target="_blank", href="http://www.facebook.com/sharer.php?u=#{baseUrl}/candidate/#{proposal.id}").flaticon.social.facebook
+        a(target="_blank", href="http://twitter.com/share?text=#{text}&url=#{baseUrl}/candidate/#{proposal.id}").flaticon.social.twitter
 
-      //- Article links
-      - if (proposal.links && proposal.links.length)
-        .col-xs-5
-          h4=t('common.more-information')
-          .links
-            ul
-              - each link in proposal.links
-                li
-                  a(target="_blank", href=link.url)=link.type
     //- Article participants
     .participants(class=proposal.votable ? '' : 'hide')
       //- Rendered by participants view
-
-    
