@@ -231,3 +231,62 @@ article.proposal
     width 100%
     height 100%
     border none
+
+.vote-box
+  background #ecf0f1
+  h5
+    text-transform uppercase
+    margin-top 0
+  .delegation-box
+    display inline-block
+  #voting-error
+    color: black
+  .meta-data
+    margin-bottom 20px
+  .change-vote
+    font-size 16px
+    color black
+    font-weight bold
+    i
+      margin-right 10px
+    &:hover
+      text-decoration none
+
+.proposal-options
+  .vote-options
+    position relative
+
+    .overlay-vote
+      background-color rgba(249, 249, 249, 0.9)
+      font-weight bold
+      height 100%
+      left 0
+      position absolute
+      text-align center
+      top 0
+      width 100%
+
+    .vote-option
+      display inline-block
+      width 100%
+      font-size 14px
+      text-align center
+      margin-right 5%
+      color #ecf0f1
+      text-transform uppercase
+      font-weight bold
+      border-radius border_radius
+      margin-bottom 20px
+      padding 14px
+      line-height 1.1
+      -webkit-transition all 0.3s ease
+
+      .flaticon
+        display inline-block
+        margin-right 14px
+      span
+        display inline-block
+      &.vote-yes
+        background-color #a4cb53
+        &:hover
+          background-color darken(#a4cb53, 40%)
