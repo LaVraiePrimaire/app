@@ -22,10 +22,10 @@
         input.form-control(type='text', id="postal", name='postal', tabindex=3, placeholder=t('admin-candidates-form.label.postal'), value=candidate.postal)
       .form-group
         label= t('admin-candidates-form.label.candidate-user-email')
-        if candidate.candidateUser
-          input.form-control(type='text', id='candidateUserEmail', name='candidateUserEmail', placeholder=t('admin-candidates-form.label.candidate-user-email'), value=candidate.candidateUser.email, validate='email')
-        else
-          input.form-control(type='text', id='candidateUserEmail', name='candidateUserEmail', placeholder=t('admin-candidates-form.label.candidate-user-email'), validate='email')
+        input.form-control(type='text', id='candidateUserEmail', name='candidateUserEmail', placeholder=t('admin-candidates-form.label.candidate-user-email'), value=candidate.candidateUser ? candidate.candidateUser.email : '', validate='email')
+      .form-group
+        label= t('admin-candidates-form.label.nominator-user-email')
+        input.form-control(type='text', id='nominatorUserEmail', name='nominatorUserEmail', placeholder=t('admin-candidates-form.label.nominator-user-email'), value=candidate.nominatorUser ? candidate.nominatorUser.email : '', validate='email')
       .form-group
         label= t('admin-candidates-form.label.email')
         input.form-control(type='text', id="email", name='email', tabindex=4, placeholder=t('admin-candidates-form.label.email'), value=candidate.email, validate='email')
