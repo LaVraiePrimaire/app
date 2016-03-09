@@ -12,8 +12,8 @@
   article.proposal.commentable-container
 
     h1=proposal.fullName
-    - if (!proposal.acceptedNomination && proposal.nominatorName)
-      h2.accepted-nomination= t('proposal-article.nominated-by-other')+proposal.nominatorName
+    - if (!proposal.acceptedNomination && proposal.nominatorUser && proposal.nominatorUser.fullName)
+      h2.accepted-nomination= t('proposal-article.nominated-by-other')+proposal.nominatorUser.fullName
     - if (!isCharte)
       hr
       .row
