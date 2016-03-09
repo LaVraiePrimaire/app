@@ -196,6 +196,7 @@
   "proposal-options.vote-item": "soutien",
   "proposal-options.votes-cast": "Déjà {num} soutiens",
   "proposal-options.yea": "Je soutiens !",
+  "proposal-options.yea": "Soutenir",
   "resend-validation-email-form.error.email-not-valid.no-link": "L'adresse e-mail pour cet utilisateur est pas validé. Nous envoyons un email de bienvenue utilisateurs lors de leur inscription. S'il vous plaît vérifier votre e-mail (pensez à vérifier votre dossier spam trop) et cliquez sur le lien fourni dans le courriel.",
   "settings-notifications.no": "Non",
   "settings-notifications.yes": "Oui",

@@ -5,16 +5,7 @@
 - var voted = user && ~votes.indexOf(user.id)
 
 .inner-container
-  - var learnMore = config.learnMoreUrl
-  - if (learnMore)
-    div.alert.alert-warning.alert-dismissable.system-alert
-      button(type="button", class="close", data-dismiss="alert", aria-hidden="true")
-      span #{t('proposal-article.article.alert.text')}&nbsp;&nbsp;
-      a.alert-link(href=learnMore, target="_blank") #{t('proposal-article.article.alert.learn-more')}
-
-
   article.proposal.commentable-container
-
     h1=proposal.fullName
     - if (!proposal.acceptedNomination && proposal.nominatorUser && proposal.nominatorUser.fullName)
       h2.accepted-nomination= t('proposal-article.nominated-by-other')+proposal.nominatorUser.fullName
