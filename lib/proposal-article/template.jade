@@ -119,7 +119,10 @@
                   = '.'
   
           .votes-cast
-            em.text-muted= t('proposal-options.votes-cast', { num: votes.length || "0" })
+            - if (votes.length && votes.length === 1)
+              em.text-muted= t('proposal-options.votes-cast.singular')
+            - else
+              em.text-muted= t('proposal-options.votes-cast.plural', { num: votes.length || "0" })
     //- Article participants
     .participants(class=!isCharte && proposal.votable ? '' : 'hide')
       //- Rendered by participants view
