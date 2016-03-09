@@ -195,7 +195,7 @@
   "proposal-options.no-votes-cast": "Sans soutien",
   "proposal-options.vote": "Soutenir",
   "proposal-options.vote-item": "soutien",
-  "proposal-options.already-liked": "Vous avez deja soutenu cette candidature.",
+  "proposal-options.alreadyLiked": "Vous avez deja soutenu cette candidature.",
   "proposal-options.votes-cast": "{num} soutiens",
   "proposal-options.yea": "Soutenir",
   "resend-validation-email-form.error.email-not-valid.no-link": "L'adresse e-mail pour cet utilisateur est pas validé. Nous envoyons un email de bienvenue utilisateurs lors de leur inscription. S'il vous plaît vérifier votre e-mail (pensez à vérifier votre dossier spam trop) et cliquez sur le lien fourni dans le courriel.",
