@@ -1,19 +1,14 @@
 - var closed = proposal.closed
 - var isCharte = proposal.firstName === 'Charte'
+- var votes = proposal.publicVotes || []
+- var participants = proposal.participants || []
+- var voted = user && ~votes.indexOf(user.id)
+
 .inner-container
-  - var learnMore = config.learnMoreUrl
-  - if (learnMore)
-    div.alert.alert-warning.alert-dismissable.system-alert
-      button(type="button", class="close", data-dismiss="alert", aria-hidden="true")
-      span #{t('proposal-article.article.alert.text')}&nbsp;&nbsp;
-      a.alert-link(href=learnMore, target="_blank") #{t('proposal-article.article.alert.learn-more')}
-
-
   article.proposal.commentable-container
-
     h1=proposal.fullName
-    - if (!proposal.acceptedNomination && proposal.nominatorName)
-      h2.accepted-nomination= t('proposal-article.nominated-by-other')+proposal.nominatorName
+    - if (!proposal.acceptedNomination && proposal.nominatorUser && proposal.nominatorUser.fullName)
+      h2.accepted-nomination= t('proposal-article.nominated-by-other')+proposal.nominatorUser.fullName
     - if (!isCharte)
       hr
       .row
@@ -92,13 +87,42 @@
     hr
 
     .row
-      //- Article share links
-      - var text = config.tweetText || (proposal.fullName + ' en La Vraie Primaire')
-      h3=t("proposal-article.article.sociallinks")
-      .share-links
-        a(target="_blank", href="http://www.facebook.com/sharer.php?u=#{baseUrl}/candidate/#{proposal.id}").flaticon.social.facebook
-        a(target="_blank", href="http://twitter.com/share?text=#{text}&url=#{baseUrl}/candidate/#{proposal.id}").flaticon.social.twitter
-
+      .col-xs-6
+        //- Article share link
+        - var text = config.tweetText || (proposal.fullName + ' en La Vraie Primaire')
+        h3=t("proposal-article.article.sociallinks")
+        .share-links
+          a(target="_blank", href="http://www.facebook.com/sharer.php?u=#{baseUrl}/candidate/#{proposal.id}").flaticon.social.facebook
+          a(target="_blank", href="http://twitter.com/share?text=#{text}&url=#{baseUrl}/candidate/#{proposal.id}").flaticon.social.twitter
+ 
+              
+      .col-xs-6
+        .proposal-options(class=isCharte ? 'hide' : '')
+          h3=t("proposal-article.article.likeTitle")
+          .vote-box
+            div#voting-error.alert.alert-warning.hide #{t('proposal-options.error.voting')}.
+            .meta-data(class= !!user.id ? '' : 'hide')
+              - if(~votes.indexOf(user.id))
+                include vote-alert
+       
+            .vote-options(class= voted || closed ? 'hide' : '')
+              .direct-vote
+                a.vote-option.vote-yes(href="#", data-proposal=proposal.id)
+                  i.flaticon.solid.thumbs-up-1
+                  span= t('proposal-options.yea')
+       
+              - if (!user.id)
+                p.text-mute.overlay-vote.hide= t('proposal-options.must-be-signed-in') + '. '
+                  a(href="/signin")= t('signin.login')
+                  = ' ' + t('common.or') + ' '
+                  a(href="/signup?reference=" + reference)= t('signin.signup')
+                  = '.'
+  
+          .votes-cast
+            - if (votes.length && votes.length === 1)
+              em.text-muted= t('proposal-options.votes-cast.singular')
+            - else
+              em.text-muted= t('proposal-options.votes-cast.plural', { num: votes.length || "0" })
     //- Article participants
     .participants(class=!isCharte && proposal.votable ? '' : 'hide')
       //- Rendered by participants view
