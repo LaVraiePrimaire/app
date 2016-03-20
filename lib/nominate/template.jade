@@ -2,9 +2,7 @@
   .col-xs-12.col-sm-2
   .nominate-candidate.col-xs-12.col-sm-8
     .heading
-      .circle
-        i.icon-user
-      h1= t(form.title)
+      h1= t('nominate-form.title')
     form.form-horizontal(action=form.action, method="post", role="form", autocomplete="off", novalidate, autovalidate='autovalidate', autosubmit='autosubmit')
       input(type='hidden', name='_user_id', value=user.id)
       input(type='hidden', name='_user_email', value=user.email)
@@ -14,7 +12,7 @@
       .form-group
         label.self
           input.form-control.rdio(type='radio', name='nominationType', value='self')
-          | t('nominate-form.label.self)
+          | t('nominate-form.label.self')
         label.third-party
           input.form-control.rdio(type='radio', name='nominationType', value'third party')
           | t('nominate-form.label.third-party')
