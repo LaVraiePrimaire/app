@@ -31,4 +31,5 @@
             h5=user.email
             h5(class= user.staff ? "" : "hide")
                 |Admin
+            h5=user.originIp
             span.user-date.hide=user.createdAt
