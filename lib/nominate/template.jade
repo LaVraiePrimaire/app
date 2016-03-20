@@ -12,10 +12,10 @@
       .form-group
         label.self
           input.form-control.rdio(type='radio', name='nominationType', value='self')
-          | t('nominate-form.label.self')
+          | Je propose ma candidature
         label.third-party
           input.form-control.rdio(type='radio', name='nominationType', value'third party')
-          | t('nominate-form.label.third-party')
+          | Je propose quelqu’un d’autre comme candidat
       .form-group.not-for-self
         label= t('nominate-form.label.firstName')
         input.form-control(type='text', id="firstName", name='firstName', placeholder=t('nominate-form.label.firstName'))
