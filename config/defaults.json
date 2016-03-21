@@ -6,7 +6,7 @@
   "mongoUrl": "mongodb://localhost/test",
   "mongoUsersUrl": "",
   "jwtSecret": "Generate a secret token and paste it here.",
-  "corsDomains": [],
+  "corsDomains": ["www.lavraieprimaire.fr"],
   "signinUrl": "",
   "signupUrl": "",
   "settingsUrl": "",
