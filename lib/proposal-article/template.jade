@@ -23,12 +23,12 @@
               p=proposal.thirdProp
         .col-xs-1
 
-        //- Article links
-        - if (proposal.links && proposal.links.length)
-          .col-xs-5
-            - if (proposal.pictureUrl)
-              .row
-                img.picture(src=proposal.pictureUrl)
+      //- Article links
+        .col-xs-5
+          - if (proposal.pictureUrl)
+            .row
+              img.picture(src=proposal.pictureUrl)
+          - if (proposal.links && proposal.links.length)
             .links
               ul
                 - each link in proposal.links
