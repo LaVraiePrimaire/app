@@ -7,8 +7,10 @@
 .inner-container
   article.proposal.commentable-container
     h1=proposal.fullName
-    - if (!proposal.acceptedNomination && proposal.nominatorUser && proposal.nominatorUser.fullName)
-      h2.accepted-nomination= t('proposal-article.nominated-by-other')+proposal.nominatorUser.fullName
+    - if (proposal.nominatorUser && proposal.nominatorUser.fullName)
+      h4.accepted-nomination= t('proposal-article.nominated-by-other')+proposal.nominatorUser.fullName
+    - if (proposal.slogan)
+      h2.slogan = proposal.slogan
     - if (!isCharte)
       hr
       .row
