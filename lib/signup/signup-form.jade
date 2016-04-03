@@ -18,12 +18,18 @@
         label #{t('signup.your-lastname')}
         input.form-control(type='text', id='lastName', name='lastName', tabindex=3, placeholder=t('signup.lastname'), validate='required lastname')
       .form-group
+        label #{t('signup.phonenum')}
+        input.form-control(type='text', id='phonenum', name='phonenum', tabindex=4, placeholder=t('signup.phonenum'), validate='required phonenum')
+      .form-group
+        label #{t('signup.zipcode')}
+        input.form-control(type='text', id='zipcode', name='zipcode', tabindex=5, placeholder=t('signup.zipcode'), validate='required zipcode')
+      .form-group
         label= t('password')
-        input.form-control(type='password', name='password', tabindex=4, placeholder=t('password'), validate='required min-length:6')
+        input.form-control(type='password', name='password', tabindex=6, placeholder=t('password'), validate='required min-length:6')
       .form-group
         label= t('signup.retype-password')
-        input.form-control(type='password', name='re_password', tabindex=5, placeholder=t('password.repeat'), validate='required same:password')
-      .form-group: button.btn.btn-success.btn-block.btn-lg(tabindex=6)=t('signup.now')
+        input.form-control(type='password', name='re_password', tabindex=7, placeholder=t('password.repeat'), validate='required same:password')
+      .form-group: button.btn.btn-success.btn-block.btn-lg(tabindex=8)=t('signup.now')
       .form-group
         - var tos = config.termsOfService;
         - var pp = config.privacyPolicy;
