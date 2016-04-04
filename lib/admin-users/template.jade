@@ -9,12 +9,15 @@
       .col-md-4.col-xs-12.text-center
         .btn-group
           span.sort-label.pull-left=t('admin-users.list.sort')
-          button.btn.btn-primary.sort(data-sort='user-firstName')
-            span.glyphicon.glyphicon-time
-          button.btn.btn-primary.sort(data-sort='user-lastName')
-            span.glyphicon.glyphicon-font
+          button.btn.btn-primary.sort(data-sort='user-name')
+              span
+                  name
           button.btn.btn-primary.sort(data-sort='user-email')
-            span.glyphicon.glyphicon-font
+              span
+                  email
+          button.btn.btn-primary.sort(data-sort='user-ip')
+              span
+                  ip
     .row
       .list.list-group
         - each user in users
@@ -27,9 +30,9 @@
                 span.glyphicon.glyphicon-ban-circle
               button.btn.btn-defauly.pull-right.delete-user
                 span.glyphicon.glyphicon-remove-circle
-            h4.user-title=user.firstName + " " + user.lastName
-            h5=user.email
+            h4.user-name=user.firstName + " " + user.lastName
+            h5.user-email=user.email
             h5(class= user.staff ? "" : "hide")
                 |Admin
-            h5=user.originIp
+            h5.user-ip=user.originIp
             span.user-date.hide=user.createdAt
