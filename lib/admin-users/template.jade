@@ -29,9 +29,17 @@
                 span.glyphicon.glyphicon-remove-circle
             h4.user-name=user.firstName + " " + user.lastName
             h5.user-email=user.email
-            h5(class= user.staff ? "" : "hide")
+            if (user.staff)
+              h5
                 |Admin
+            if (user.emailValidated)
+              h5
+                |Courriel invalide
+            if (user.disabledAt)
+              h5
+                |Disabled user
             h5.user-ip=user.originIp
             h5.user-phone=user.phonenum
             h5.user-zip=user.zipcode
+
             span.user-date.hide=user.createdAt
