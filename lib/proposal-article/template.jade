@@ -6,7 +6,7 @@
 
 .inner-container
   article.proposal.commentable-container
-    h1=proposal.fullName
+    h1.name=proposal.fullName
     - if (proposal.nominatorUser && proposal.nominatorUser.fullName)
       h4.accepted-nomination= t('proposal-article.nominated-by-other')+proposal.nominatorUser.fullName
     - if (proposal.slogan)
