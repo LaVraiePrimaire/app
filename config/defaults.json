@@ -93,7 +93,7 @@
   "commentsPerPage": 0,
   "spamLimit": 5,
   "frequentlyAskedQuestions": true,
-  "termsOfService": false,
+  "termsOfService": true,
   "privacyPolicy": false,
   "glossary": false,
   "homeLink": "/",
