@@ -11,13 +11,10 @@
           span.sort-label.pull-left=t('admin-users.list.sort')
           button.btn.btn-primary.sort(data-sort='user-name')
               span
-                  name
           button.btn.btn-primary.sort(data-sort='user-email')
               span
-                  email
           button.btn.btn-primary.sort(data-sort='user-ip')
               span
-                  ip
     .row
       .list.list-group
         - each user in users
@@ -35,4 +32,6 @@
             h5(class= user.staff ? "" : "hide")
                 |Admin
             h5.user-ip=user.originIp
+            h5.user-phone=user.phonenum
+            h5.user-zip=user.zipcode
             span.user-date.hide=user.createdAt
