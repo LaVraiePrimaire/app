@@ -282,7 +282,7 @@
   "signup.lastname": "Nom de famille",
   "signup.now": "S'inscrire maintenant",
   "signup.now-can-vote": "Vous pouvez maintenant débattre et soutenir des candidatures !",
-  "signup.phonenum": "Un n° de portable francais",
+  "signup.phonenum": "Un n° de portable français qui sera uniquement utilisé pour envoyer par SMS le code pour le vote",
   "signup.received": "Vos informations d'inscription ont été reçues. Nous vous avons envoyé un courriel pour que vous puissiez valider votre adresse.",
   "signup.resend-email": "Renvoyer le courriel",
   "signup.resend-validation-email": "Renvoyer le courriel de validation",
